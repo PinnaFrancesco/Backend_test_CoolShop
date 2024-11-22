@@ -1,0 +1,15 @@
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\bin\Debug\net8.0\Test_Backend_Coolshop.exe
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\bin\Debug\net8.0\Test_Backend_Coolshop.deps.json
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\bin\Debug\net8.0\Test_Backend_Coolshop.runtimeconfig.json
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\bin\Debug\net8.0\Test_Backend_Coolshop.dll
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\bin\Debug\net8.0\Test_Backend_Coolshop.pdb
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\Test_Backend_Coolshop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\Test_Backend_Coolshop.AssemblyInfoInputs.cache
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\Test_Backend_Coolshop.AssemblyInfo.cs
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\Test_Backend_Coolshop.csproj.CoreCompileInputs.cache
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\Test_Backend_Coolshop.sourcelink.json
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\Test_Backend_Coolshop.dll
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\refint\Test_Backend_Coolshop.dll
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\Test_Backend_Coolshop.pdb
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\Test_Backend_Coolshop.genruntimeconfig.cache
+C:\Users\pinna\GitHub\Backend_test_CoolShop\C#\Test_Backend_Coolshop\obj\Debug\net8.0\ref\Test_Backend_Coolshop.dll
