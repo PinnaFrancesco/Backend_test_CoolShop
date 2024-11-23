@@ -64,7 +64,7 @@ function main(){
         process.exit(1);
     }*/
     console.log("inizio");
-    orders = CSVToObj("./orders.csv");
+    orders = CSVToObj("../orders.csv");
     console.log(orders);
     console.log("\n\nMax impoert\n\n");
     console.log(findMax(orders, "totalWithDiscount"));
