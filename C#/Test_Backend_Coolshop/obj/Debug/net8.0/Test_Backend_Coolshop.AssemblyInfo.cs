@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Test_Backend_Coolshop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a01971c6db6eb54357afca9d7739cc7b93026c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02a41b857a268d58e0e38d773f6dfb7eee08b9eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Test_Backend_Coolshop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Test_Backend_Coolshop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

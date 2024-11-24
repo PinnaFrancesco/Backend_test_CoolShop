@@ -13,6 +13,20 @@ class Program{
             Console.WriteLine(order.Id);
         }
 
+        var maxTotal = orders.OrderByDescending(o => o.TotalWithDiscount).First();
+        var maxQuantity = orders.OrderByDescending(o => o.Quantity).First();
+        var maxDiscountDiff = orders.OrderByDescending(o => o.DiscountDifference).First();
+
+        // Stampa i risultati
+        Console.WriteLine("\nRecord con importo totale più alto:");
+        Console.WriteLine(maxTotal);
+
+        Console.WriteLine("\nRecord con quantità più alta:");
+        Console.WriteLine(maxQuantity);
+
+        Console.WriteLine("\nRecord con maggior differenza tra totale senza sconto e totale con sconto:");
+        Console.WriteLine(maxDiscountDiff);
+
     }
     
     static List<Order> ReadCsv(string filePath)
@@ -28,30 +42,34 @@ class Program{
                 Id = int.Parse(parts[0].Replace("\"", "")),
                 ArticleName = parts[1],
                 Quantity = int.Parse(parts[2]),
-                UnitPrice = decimal.Parse(parts[3]),
-                PercentageDiscount = decimal.Parse(parts[4]),
+                UnitPrice = float.Parse(parts[3]),
+                PercentageDiscount = float.Parse(parts[4]),
                 Buyer = parts[5],
             });
         }
 
         return orders;
     }
+
+    
 }
 
 class Order{
     public int Id { get; set; }
     public string ArticleName { get; set; }
     public int Quantity { get; set; }
-    public decimal UnitPrice { get; set; }
-    public decimal PercentageDiscount { get; set; }
+    public float UnitPrice { get; set; }
+    public float PercentageDiscount { get; set; }
     public string Buyer { get; set; }
 
-    public decimal TotalWithoutDiscount => Quantity * UnitPrice;
-    public decimal TotalWithDiscount => TotalWithoutDiscount * (1 - PercentageDiscount / 100);
-    public decimal DiscountDifference => TotalWithoutDiscount - TotalWithDiscount;
+    public float TotalWithoutDiscount => Quantity * UnitPrice;
+    public float TotalWithDiscount => TotalWithoutDiscount - ((PercentageDiscount * TotalWithoutDiscount) / 100);
+    public float DiscountDifference => TotalWithoutDiscount - TotalWithDiscount;
 
     public override string ToString()
     {
-        return base.ToString();
+        return $"Id: {Id}, Article: {ArticleName}, Quantity: {Quantity}, Unit Price: {UnitPrice:C}, " +
+               $"Discount: {PercentageDiscount}%, Buyer: {Buyer}, " +
+               $"Total: {TotalWithDiscount:C}, Discount Diff: {DiscountDifference:C}";
     }
 }
