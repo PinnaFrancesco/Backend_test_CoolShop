@@ -29,9 +29,14 @@ class Program{
 
     }
     
+    /// <summary>
+    /// Method that recives a file path and create an array of Order objects
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <returns> List<Order> orders </returns>
     static List<Order> ReadCsv(string filePath)
     {
-        var lines = File.ReadAllLines(filePath).Skip(1); // Salta l'intestazione
+        var lines = File.ReadAllLines(filePath).Skip(1); // skip the frist line
         var orders = new List<Order>();
 
         foreach (var line in lines)
@@ -53,7 +58,9 @@ class Program{
 
     
 }
-
+/// <summary>
+/// Order class 
+/// </summary>
 class Order{
     public int Id { get; set; }
     public string ArticleName { get; set; }
