@@ -17,3 +17,8 @@ Lo script deve dare in output i seguenti dati:
 Record con importo totale più alto
 Record con quantità più alta
 Record con maggior differenza tra totale senza sconto e totale con sconto
+
+## Instructions
+C# : Eseguire da terninale con comando : dotnet run .\C#\Test_Backend_Coolshop\Program.cs
+
+node.js : Eseguire da terninale con comando : node node.js ./orders.csv
