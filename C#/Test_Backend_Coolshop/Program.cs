@@ -6,7 +6,12 @@ class Program{
     static void Main(string [] args){
         string filePath = @"C:\Users\pinna\GitHub\Backend_test_CoolShop\orders.csv";
 
-        Console.WriteLine(ReadCsv(filePath));
+        List<Order> orders = ReadCsv(filePath);
+
+        foreach (var order in orders)
+        {
+            Console.WriteLine(order.Id);
+        }
 
     }
     
@@ -20,7 +25,7 @@ class Program{
             var parts = line.Split(',');
             orders.Add(new Order
             {
-                Id = int.Parse(parts[0]),
+                Id = int.Parse(parts[0].Replace("\"", "")),
                 ArticleName = parts[1],
                 Quantity = int.Parse(parts[2]),
                 UnitPrice = decimal.Parse(parts[3]),
