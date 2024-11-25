@@ -4,14 +4,27 @@ using System.Collections.Generic;
 using System.Linq;
 class Program{
     static void Main(string [] args){
-        string filePath = @"C:\Users\pinna\GitHub\Backend_test_CoolShop\orders.csv";
 
-        List<Order> orders = ReadCsv(filePath);
-
-        foreach (var order in orders)
-        {
-            Console.WriteLine(order.Id);
+        if(args.Length == 0){
+            Console.WriteLine("\nMissing file path\n");
+            Environment.Exit(0);
         }
+
+        Console.WriteLine(args[0]);
+
+        string filePath = args[0];
+
+        if(File.Exists(filePath) == false){
+            Console.WriteLine("\nFile does't exists\n");
+            Environment.Exit(0);
+        }
+
+        if(new FileInfo(filePath).Length == 0){
+            Console.WriteLine("\nFile vuoto\n");
+            Environment.Exit(0);
+        }
+        
+        List<Order> orders = ReadCsv(filePath);
 
         var maxTotal = orders.OrderByDescending(o => o.TotalWithDiscount).First();
         var maxQuantity = orders.OrderByDescending(o => o.Quantity).First();

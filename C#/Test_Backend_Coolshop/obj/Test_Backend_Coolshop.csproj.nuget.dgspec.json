@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pinna\\GitHub\\Backend_test_CoolShop\\c#\\Test_Backend_Coolshop\\Test_Backend_Coolshop.csproj": {}
+    "Z:\\Git\\Backend_test_CoolShop\\C#\\Test_Backend_Coolshop\\Test_Backend_Coolshop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pinna\\GitHub\\Backend_test_CoolShop\\c#\\Test_Backend_Coolshop\\Test_Backend_Coolshop.csproj": {
+    "Z:\\Git\\Backend_test_CoolShop\\C#\\Test_Backend_Coolshop\\Test_Backend_Coolshop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pinna\\GitHub\\Backend_test_CoolShop\\c#\\Test_Backend_Coolshop\\Test_Backend_Coolshop.csproj",
+        "projectUniqueName": "Z:\\Git\\Backend_test_CoolShop\\C#\\Test_Backend_Coolshop\\Test_Backend_Coolshop.csproj",
         "projectName": "Test_Backend_Coolshop",
-        "projectPath": "C:\\Users\\pinna\\GitHub\\Backend_test_CoolShop\\c#\\Test_Backend_Coolshop\\Test_Backend_Coolshop.csproj",
-        "packagesPath": "C:\\Users\\pinna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pinna\\GitHub\\Backend_test_CoolShop\\c#\\Test_Backend_Coolshop\\obj\\",
+        "projectPath": "Z:\\Git\\Backend_test_CoolShop\\C#\\Test_Backend_Coolshop\\Test_Backend_Coolshop.csproj",
+        "packagesPath": "C:\\Users\\ICTS23-25.312\\.nuget\\packages\\",
+        "outputPath": "Z:\\Git\\Backend_test_CoolShop\\C#\\Test_Backend_Coolshop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pinna\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ICTS23-25.312\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
