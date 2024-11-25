@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Test_Backend_Coolshop
-build_property.ProjectDir = Z:\Git\Backend_test_CoolShop\C#\Test_Backend_Coolshop\
+build_property.ProjectDir = z:\Git\Backend_test_CoolShop\C#\Test_Backend_Coolshop\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -26,19 +26,21 @@ class Program{
         
         List<Order> orders = ReadCsv(filePath);
 
-        var maxTotal = orders.OrderByDescending(o => o.TotalWithDiscount).First();
-        var maxQuantity = orders.OrderByDescending(o => o.Quantity).First();
-        var maxDiscountDiff = orders.OrderByDescending(o => o.DiscountDifference).First();
+        if(orders != null){
+            var maxTotal = orders.OrderByDescending(o => o.TotalWithDiscount).First();
+            var maxQuantity = orders.OrderByDescending(o => o.Quantity).First();
+            var maxDiscountDiff = orders.OrderByDescending(o => o.DiscountDifference).First();
 
-        // Stampa i risultati
-        Console.WriteLine("\nRecord con importo totale più alto:");
-        Console.WriteLine(maxTotal);
+            // Stampa i risultati
+            Console.WriteLine("\nRecord con importo totale più alto:");
+            Console.WriteLine(maxTotal);
 
-        Console.WriteLine("\nRecord con quantità più alta:");
-        Console.WriteLine(maxQuantity);
+            Console.WriteLine("\nRecord con quantità più alta:");
+            Console.WriteLine(maxQuantity);
 
-        Console.WriteLine("\nRecord con maggior differenza tra totale senza sconto e totale con sconto:");
-        Console.WriteLine(maxDiscountDiff);
+            Console.WriteLine("\nRecord con maggior differenza tra totale senza sconto e totale con sconto:");
+            Console.WriteLine(maxDiscountDiff);
+        }
 
     }
     
@@ -51,10 +53,32 @@ class Program{
     {
         var lines = File.ReadAllLines(filePath).Skip(1); // skip the frist line
         var orders = new List<Order>();
-
+        var counter = 0;
         foreach (var line in lines)
         {
             var parts = line.Split(',');
+            //checks if values are all right
+            if (int.Parse(parts[0].Replace("\"", "")) <= 0 || int.Parse(parts[0].Replace("\"", "")) == null)
+            {
+                Console.WriteLine("Id is less or equal to 0 at line " + counter);
+                return null;
+            }
+            else if (int.Parse(parts[2]) <= 0 || int.Parse(parts[2]) == null)
+            {
+                Console.WriteLine("Quantity is less or equal to 0 at line " + counter);
+                return null;
+            }
+            else if (float.Parse(parts[3]) < 0 || float.Parse(parts[3]) == null)
+            {
+                Console.WriteLine("UnitPrice is less than 0 at line " + counter);
+                return null;
+            }
+            else if (float.Parse(parts[4]) < 0 || float.Parse(parts[4]) == null)
+            {
+                Console.WriteLine("PercentageDiscount is less than 0 at line " + counter);
+                return null;
+            }
+            counter++;
             orders.Add(new Order
             {
                 Id = int.Parse(parts[0].Replace("\"", "")),
@@ -62,7 +86,7 @@ class Program{
                 Quantity = int.Parse(parts[2]),
                 UnitPrice = float.Parse(parts[3]),
                 PercentageDiscount = float.Parse(parts[4]),
-                Buyer = parts[5],
+                Buyer = parts[5].Replace("\"", ""),
             });
         }
 

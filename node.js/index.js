@@ -4,18 +4,31 @@ const path = require('path');
 /**
  * Reads the records of a .csv file and puts their values in an Array of Order objects
  * @param {String} filePath 
- * @returns
+ * @returns {array} orders 
  */
 function CSVToObj(filePath) {
     const content = fs.readFileSync(filePath, 'utf-8');
-    const lines = content.split('\n').filter(line => line.trim() !== ''); // Rimuove righe vuote
-    const [header, ...rows] = lines;
+    const data = content.split('\n').filter(line => line.trim() !== '');
+    const [header, ...rows] = data;
 
-    //for each row takes the value from the string array and puts them into the order object attributes
+    //for each row it cleans it and then takes the value from the string array and puts them into the order object attributes checking if there are any worng values
     return rows.map(row => {
         const cleanRow = row.trim().replace(/^"|"$/g, '');
         const [id, articleName, quantity, unitPrice, percentageDiscount, buyer] = cleanRow.split(',');
+        if(id === null){
+            throw new Error ("id null or less than 0");
+        }
+        else if(quantity < 0 || quantity === null){
+            throw new Error ("quantity null or less than 0");
+        }
+        else if(unitPrice < 0 || unitPrice === null){
+            throw new Error ("unitPrice null or less than 0");
+        }
+        else if(percentageDiscount < 0 || percentageDiscount === null){
+            throw new Error ("percentageDiscount null or less than 0");
+        }
 
+        //creating the order object
         const order = {
             id: parseInt(id),
 
@@ -62,25 +75,36 @@ function findMax(orders, key) {
 function main(){
 
 
-    // checking if the user write a file path and if it exists
+    // checking if the user write a file path and if it exists an it isn't empty
     const args = process.argv.slice(2);
     if (args.length === 0) {
-        console.error('Missing the csv path: node index.js <path_to_csv>');
+        console.error("Missing the csv path");
         process.exit(1);
     }
 
     const filePath = path.resolve(args[0]);
 
     if (!fs.existsSync(filePath)) {
-        console.error(`File not found: ${filePath}`);
+        console.error("File not found: ${filePath}");
         process.exit(1);
     }
-    
+
+    const epmty = fs.statSync(filePath);
+    if (epmty.size === 0) {
+        console.error("The file is empty");
+        process.exit(1);
+    }
+    var orders;
     // converting the csv into an array of objects
-    orders = CSVToObj(filePath);
-
-
+    try{
+        orders = CSVToObj(filePath);
+    } catch(error){
+        console.error(`Error: ${error.message}`);
+    }
     
+
+
+    if(orders != null){
     console.log("\n\nMax impoert\n\n");
     console.log(findMax(orders, "totalWithDiscount"));
 
@@ -89,6 +113,7 @@ function main(){
 
     console.log("\n\nMaximum difference between discounted and not\n");
     console.log(findMax(orders, "discountDifference"));
+    }
 }
 
 main();
