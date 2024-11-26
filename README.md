@@ -19,6 +19,6 @@ Record con quantità più alta
 Record con maggior differenza tra totale senza sconto e totale con sconto
 
 ## Istruzioni
-C# : Eseguire da terninale con comando : dotnet run .\C#\Test_Backend_Coolshop\Program.cs
+C# : Eseguire da terninale con comando : dotnet run --project .\C#\Test_Backend_Coolshop\Test_Backend_Coolshop.csproj orders.csv 
 
 node.js : Eseguire da terninale con comando : node node.js ./orders.csv
