@@ -16,16 +16,16 @@ function CSVToObj(filePath) {
         const cleanRow = row.trim().replace(/^"|"$/g, '');
         const [id, articleName, quantity, unitPrice, percentageDiscount, buyer] = cleanRow.split(',');
         if(id === null){
-            throw new Error ("id null or less than 0");
+            throw new Error ("Id inferiore o uguale a 0");
         }
         else if(quantity < 0 || quantity === null){
-            throw new Error ("quantity null or less than 0");
+            throw new Error ("Quantity inferiore o uguale a 0");
         }
         else if(unitPrice < 0 || unitPrice === null){
-            throw new Error ("unitPrice null or less than 0");
+            throw new Error ("UnitPrice inferiore a 0 ");
         }
         else if(percentageDiscount < 0 || percentageDiscount === null){
-            throw new Error ("percentageDiscount null or less than 0");
+            throw new Error ("PercentageDiscount inferiore a 0");
         }
 
         //creating the order object
